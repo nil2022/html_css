@@ -35,11 +35,27 @@
         document.getElementById("view").innerHTML = index;
       }
     </script>
+      <style>
+        #searchEl {
+          size: 1px;
+          border: 0.5px solid;
+          border-radius: 2px;
+          width: 120px;
+          background-color: rgb(229, 238, 238);
+        }
+        #button {
+          size: 1px;
+          border: 0.5px solid;
+          border-radius: 2px;
+          width: 120px;
+          background-color: rgb(224, 240, 248);
+        }
+      </style>
   </head>
   <body>
     <p>Data- [20,40,60,5,10,70,80,99]</p>
     <input type="text" placeholder="Enter Value" id="searchEl" />
-    <button onclick="searchElement()">Search Element</button>
+    <button onclick="searchElement()" id="button">Search Element</button>
     <p>Index - <span id="view"></span></p>
   </body>
 </html>
