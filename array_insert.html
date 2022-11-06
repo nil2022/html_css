@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Insert</title>
+    <script>
+      // let data = [60,30,10,67,40];
+      // let newElem = 70;
+      // let position = 1;
+      // console.log(data);
+      // for(let i=data.length-1;i>=0;i--){
+      //     //console.log(data[i]);
+      //     if(i>=position)
+      //     {
+      //         data[i+1] = data[i];
+      //         if(i===position){
+      //             data[i] = newElem;
+      //         }
+      //     }
+      // }
+      // console.log(data);
+      function insertElem() {
+        let data = [60, 30, 10, 67, 40];
+        let position = document.getElementById("position").value;
+        let newElem = document.getElementById("newElem").value;
+        newElem = parseInt(newElem);
+        console.log(data);
+        for (let i = data.length - 1; i >= 0; i--) {
+          if (i >= position) {
+            data[i + 1] = data[i];
+            if (i === parseInt(position)) {
+              data[i] = newElem;
+            }
+          }
+        }
+        console.log(data);
+        window.alert(data);
+      }
+    </script>
+  </head>
+  <body>
+    <h4>Array - [60, 30, 10, 67, 40]</h4>
+    <input type="text" id="position" placeholder="Enter Position" /> <br />
+    <input type="text" id="newElem" placeholder="Enter New Element" /> <br />
+
+    <button onclick="insertElem()">Insert Element</button>
+  </body>
+</html>

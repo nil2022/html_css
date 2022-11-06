@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Element in Array</title>
+    <script>
+      //  let data = [30,20,45,76,20,80];
+      //  let position = 3;
+      //  for(let i= position;i<data.length-1;i++){
+      //   data[i] = data[i+1];
+      //  }
+      //  data.length = data.length-1
+      //  console.log(data);
+      //  document.write(data);
+      function removeEl() {
+        let data = [30, 20, 45, 76, 20, 80];
+        let position = document.getElementById("position").value;
+        position = (parseInt(position) - 1);
+        if (position < data.length && position > -1) {
+          for (let i = position; i < data.length - 1; i++) {
+            data[i] = data[i + 1];
+          }
+          data.length = data.length - 1;
+          console.log(data);
+          document.getElementById("afterValue").innerHTML = data;
+        } else {
+          console.log("Position is out of array length");
+          let text1 = "Position is out of array length";
+          document.getElementById("afterValue").innerHTML = text1; //insert data into HTML Body
+        }
+        // alert(data);
+      }
+    </script>
+    <style>
+      #position {
+        size: 1px;
+        border: 0.5px solid;
+        border-radius: 2px;
+        width: 90px;
+      }
+      #button {
+        size: 1px;
+        border: 0.5px solid;
+        border-radius: 2px;
+        width: 120px;
+        background-color: rgb(224, 240, 248);
+      }
+    </style>
+  </head>
+  <body>
+    <h4>Array - [30,20,45,76,20,80]</h4>
+    <input type="text" placeholder="Enter Position" id="position" />
+    <button onclick="removeEl()" id="button">Remove Element</button>
+     <p>Array - [<span id="afterValue"></span>]</p> <!--Display the Data -->
+  </body>
+</html>
