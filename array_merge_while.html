@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge Two Array in One with while loop</title>
+    <script>
+      /*  let data1 = [3,7,12,34,56,90];  //sorted array 1
+        let data2 = [4,9,25,45];  //sorted array 2
+        let data3 = [];
+        let d1=0;
+        let d2=0;
+        let d3=0;
+        while(d1<data1.length && d2<data2.length) {
+            if(data1[d1]<data2[d2]){
+                data3[d3]=data1[d1];
+                d1++;
+            }else {
+                data3[d3]=data2[d2];
+                d2++;
+            }
+            d3++;
+          }
+          while(d1<data1.length || d2<data2.length){
+              if(d1<data1.length){
+                data3[d3]=data1[d1];
+                      d1++;
+              } else {
+                data3[d3]=data2[d2];
+                      d2++;
+              }
+            d3++;
+          }
+        console.log(data3);    */
+      function mergeArrayWhile() {
+        let data1 = [3, 7, 12, 34, 56, 90]; //sorted array 1
+        let data2 = [4, 9, 25, 45]; //sorted array 2
+        let data3 = [];
+        let d1 = 0;
+        let d2 = 0;
+        let d3 = 0;
+        while (d1 < data1.length && d2 < data2.length) {
+          if (data1[d1] < data2[d2]) {
+            data3[d3] = data1[d1];
+            d1++;
+          } else {
+            data3[d3] = data2[d2];
+            d2++;
+          }
+          d3++;
+        }
+        while (d1 < data1.length || d2 < data2.length) {
+          if (d1 < data1.length) {
+            data3[d3] = data1[d1];
+            d1++;
+          } else {
+            data3[d3] = data2[d2];
+            d2++;
+          }
+          d3++;
+        }
+        console.log(data3);
+        document.getElementById("finalArray").innerHTML = data3;
+      }
+    </script>
+  </head>
+  <body>
+    <b>Array 1 - [3, 7, 12, 34, 56, 90]</b> <br><br>
+    <b>Array 2 - [4, 9, 25, 45]</b> <br><br>
+    <button onclick="mergeArrayWhile()" id="mergeButton">Merge Array!</button><br><br>
+    Merged Sorted Array - <span id="finalArray"></span>
+  </body>
+</html>

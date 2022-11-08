@@ -36,7 +36,8 @@
           }
         }
         console.log(data);
-        window.alert(data);
+        document.getElementById("insert1").innerHTML = data;
+        // window.alert(data);
       }
     </script>
   </head>
@@ -46,5 +47,6 @@
     <input type="text" id="newElem" placeholder="Enter New Element" /> <br />
 
     <button onclick="insertElem()">Insert Element</button>
+    <p>Array - <span id="insert1"></span></p>
   </body>
 </html>
