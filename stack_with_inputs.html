@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stack in JS with Buttons</title>
+    <script>
+      let data = [];
+      let currentSize = data.length;
+      let maxSize = 5;
+      function push() {
+        let newVal = document.getElementById("newEl").value;
+        if (newVal === "") {
+          console.error("Input is Empty!");
+          document.getElementById("statusPop").innerHTML = "Input is Empty!";
+        } else {
+          data[currentSize] = newVal;
+          currentSize++;
+          document.getElementById("newEl").value = "";
+          document.getElementById(
+            "statusPop"
+          ).innerHTML = `Element '${newVal}' added!`;
+          document.getElementById("viewArray").innerHTML = "";
+          console.log(data);
+        }
+      }
+      function pop() {
+        if (currentSize === 0) {
+          let status1 = "Can't Pop, Stack is Empty!";
+          document.getElementById("statusPop").innerHTML = status1;
+          console.error("Stack is Empty");
+        } else {
+          currentSize--;
+          data.length = currentSize;
+          document.getElementById(
+            "statusPop"
+          ).innerHTML = `Last element deleted!`;
+          document.getElementById("viewArray").innerHTML = "";
+          console.log(data);
+        }
+      }
+      function display() {
+        if (currentSize === 0) {
+          let status2 = "Can't display, Stack is Empty!";
+          document.getElementById("statusPop").innerHTML = status2;
+        } else {
+          document.getElementById("viewArray").innerHTML = data;
+          document.getElementById("statusPop").innerHTML =
+            "Display Successfull!!";
+          console.log(data);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Stack in Javascript</h1>
+    <input type="text" placeholder="Enter Element to Add" id="newEl" />
+    <button onclick="push()">Add Element to Stack</button>
+    <button onclick="pop()">Remove Element from Stack</button>
+    <button onclick="display()">Display all Elements of Stack</button>
+    <p>Array - [<span id="viewArray"></span>]</p>
+    Status - <span id="statusPop"></span>
+  </body>
+</html>

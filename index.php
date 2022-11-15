@@ -1,1 +1,1 @@
-<?php include_once("array_merge.html"); ?>
+<?php include_once("stack_with_inputs.html"); ?>
